@@ -1,0 +1,25 @@
+// add css for navbar bgroung color here
+$navbar-default-bg: deepskyblue;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//add custom css here
+#logo{
+    float: left;
+    font-size: 1.7em;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#logo:hover {
+    color:#fff;
+    tex-decoration: none;
+    
+}
+
+.center{
+text-align: center;
+}
