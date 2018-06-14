@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StaticpageTest < ActionDispatch::IntegrationTest
+class StaticPageTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
@@ -9,8 +9,5 @@ class StaticpageTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
-  test "should get about" do
-    get static_page_about_url
-    assert _response :success
-  end
+  
 end
