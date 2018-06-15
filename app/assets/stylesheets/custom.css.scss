@@ -1,10 +1,12 @@
-// add css for navbar bgroung color here
+// add css for navbar background color here
 $navbar-default-bg: deepskyblue;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-//add custom css here
+//Add  all custom css here
+
+// css for site logo
 #logo{
     float: left;
     font-size: 1.7em;
@@ -20,6 +22,31 @@ $navbar-default-bg: deepskyblue;
     
 }
 
+//Making all the text in the Jumbotron div to be centred align:
 .center{
 text-align: center;
+}
+
+//sytle for the jumbotron backround image,h1 and h2
+.jumbotron {
+    background-image: asset-url("cover_image.jpg");
+    background-size:cover;
+    height: 350px;
+    
+}
+
+.jumbotron h1,h2 {
+    color:#fff;
+    text-align:center;
+    margin-bottom:30px;
+    letter-spacing: -px;
+    font-weight:bold;
+}
+.btn-xlarge {
+    background-color:deepskyblue;
+}
+
+.btn-xlarge:hover {
+    color:#fff;
+    text-decoration: none;
 }
