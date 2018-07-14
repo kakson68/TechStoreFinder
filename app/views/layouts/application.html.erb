@@ -14,12 +14,22 @@
   <%= render 'layouts/shared/navbar' %>
     
     <div class ="container">
+      <!-- Flash notice config below -->
+  <% if notice %>
+    <div class="alert  alert-info"><%= notice %></div>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert  alert-warning"><%= alert %></div>
+  <% end %>
+   <!-- Flash notice config ends here -->
+      
       <%= yield %>
       </div>
     
-    
-  
-    
+    <%= render 'layouts/shared/footer' %>
     
   </body>
+  
+  
 </html>

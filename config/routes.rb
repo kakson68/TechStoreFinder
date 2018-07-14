@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'static_page#home'
+  devise_for :users
+  resources :solutions
+  resources :serviceproviders
+  resources :repairs
+  root to: 'static_page#home'
    get 'home', to: 'static_page#home'
 
   get 'about', to: 'static_page#about'

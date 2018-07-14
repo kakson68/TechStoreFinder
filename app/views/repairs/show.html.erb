@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<%= render 'layouts/shared/page_title', title: @repair.job_number %>
+
+<p>
+  <strong>Job number:</strong>
+  <%= @repair.job_number %>
+</p>
+
+<p>
+  <strong>Fault:</strong>
+  <%= @repair.fault %>
+</p>
+
+<p>
+  <strong>Descrition:</strong>
+  <%= @repair.descrition %>
+</p>
+
+<p>
+  <strong>Repair type:</strong>
+  <%= @repair.repair_type %>
+</p>
+
+<p>
+  <strong>Booking date:</strong>
+  <%= @repair.booking_date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @repair.location %>
+</p>
+
+<p>
+  <strong>Repairer:</strong>
+  <%= @repair.repairer %>
+</p>
+<!-- entered by jkm for sp to show in show page -->
+<p>
+   <strong>Serviceprovider:</strong>
+<%= @repair.serviceprovider&.title %>
+</p>
+<%if current_user && current_user.admin %>
+<%= link_to 'Edit', edit_repair_path(@repair) %> |
+<%end%>
+<%= link_to 'Back', repairs_path %>

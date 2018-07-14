@@ -1,0 +1,71 @@
+<%= form_with(model: repair, local: true) do |form| %>
+  <% if repair.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(repair.errors.count, "error") %> prohibited this repair from being saved:</h2>
+
+      <ul>
+      <% repair.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--div class="field">
+    <%= form.label :job_number %>
+    <%= form.text_field :job_number, id: :repair_job_number %>
+  </div-->
+ <div class="form-group">
+    <%= form.label :job_number %>
+    <%= form.text_field :job_number, class: "form-control", id: :repair_job_number %>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :fault %>
+    <%= form.text_field :fault, class: "form-control", id: :repair_fault %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :descrition %>
+    <%= form.text_area :descrition, class: "form-control", id: :repair_descrition %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :repair_type %>
+    <%= form.text_field :repair_type, class: "form-control", id: :repair_repair_type %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :booking_date %>
+    <%= form.datetime_select :booking_date, class: "form-control", id: :repair_booking_date %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: "form-control", id: :repair_location %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :repairer %>
+    <%= form.text_field :repairer, class: "form-control", id: :repair_repairer %>
+  </div>
+  
+  
+  
+  <%# add jkm %>
+  
+   <div class="form-group">
+    <%= form.label :serviceprovider %>
+    <%#= form.collection_select :serviceprovider_id, @serviceproviders, :id, :title %>
+    <%= form.select :serviceprovider_id, @serviceproviders.pluck(:title, :id) %>
+  </div> 
+  
+ 
+
+
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary btn-lg btn-xlarge" %>
+  </div>
+  
+<% end %>

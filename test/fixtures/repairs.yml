@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_number: MyString
+  fault: MyString
+  descrition: MyText
+  repair_type: MyString
+  booking_date: 2018-07-04 20:16:21
+  location: MyString
+  repairer: MyString
+
+two:
+  job_number: MyString
+  fault: MyString
+  descrition: MyText
+  repair_type: MyString
+  booking_date: 2018-07-04 20:16:21
+  location: MyString
+  repairer: MyString

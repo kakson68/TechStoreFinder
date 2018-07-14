@@ -10,6 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180714104621) do
+
+  create_table "repairs", force: :cascade do |t|
+    t.string "job_number"
+    t.string "fault"
+    t.text "descrition"
+    t.string "repair_type"
+    t.datetime "booking_date"
+    t.string "location"
+    t.string "repairer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "serviceprovider_id"
+    t.index ["serviceprovider_id"], name: "index_repairs_on_serviceprovider_id"
+  end
+
+  create_table "serviceproviders", force: :cascade do |t|
+    t.string "title"
+    t.string "rep"
+    t.text "description"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "image_url"
+    t.integer "serviceprovider_id"
+    t.integer "repair_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["repair_id"], name: "index_solutions_on_repair_id"
+    t.index ["serviceprovider_id"], name: "index_solutions_on_serviceprovider_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
 
 end

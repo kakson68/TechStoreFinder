@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @serviceprovider.title %>
+</p>
+
+<p>
+  <strong>Rep:</strong>
+  <%= @serviceprovider.rep %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @serviceprovider.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @serviceprovider.url %>
+</p>
+ <% if current_user && current_user.admin %>
+<%= link_to 'Edit', edit_serviceprovider_path(@serviceprovider) %>
+<% end %>|
+<%= link_to 'Back', serviceproviders_path %>
