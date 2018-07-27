@@ -5,7 +5,10 @@
 <div class="jumbotron center">
   <h1>Welcome to Tech Store Finder</h1>
   <h2>Reliable Partners to Service and Repair Your Gadgets!</h2>
+  
+  <%if current_user && current_user.admin %>
   <p><%= link_to "View All Solutions", solutions_path,class: "btn btn-info btn-lg btn-xlarge" %></p>
+  <%end%>
 
   <%#= link_to "Sign up or log in", new_user_registration_path, class: "btn btn-info btn-lg btn-xlarge" %>
 </div>
