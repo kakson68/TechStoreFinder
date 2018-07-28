@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :addresses
+  resources :devices
   devise_for :users
   resources :solutions
   resources :serviceproviders
