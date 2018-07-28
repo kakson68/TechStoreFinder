@@ -17,12 +17,14 @@
 
 <p>
   <strong>Serviceprovider:</strong>
-  <%= @solution.serviceprovider %>
+  <%= @solution.serviceprovider&.title %>
 </p>
 
+
+<!--resolve the error by adding &.id to repair below-->
 <p>
   <strong>Repair:</strong>
-  <%= @solution.repair %>
+  <%= @solution.repair&.id %>
 </p>
 <%if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_solution_path(@solution) %> |

@@ -25,8 +25,8 @@ class SolutionsController < ApplicationController
   # POST /solutions.json
   def create
     #linking current user to solution
-    #@solution = Solution.new(solution_params)
-    @solution = current_user.solutions.new(repair_params)
+    @solution = Solution.new(solution_params)
+    #@solution = current_user.solutions.new(repair_params)
 
     respond_to do |format|
       if @solution.save
@@ -70,7 +70,8 @@ class SolutionsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # repair id disable jkm
     def solution_params
-      params.require(:solution).permit(:name, :description, :image_url, :serviceprovider_id, :repair_id)
+      params.require(:solution).permit(:name, :description, :image_url, :serviceprovider_id,:repair_id)
     end
 end
