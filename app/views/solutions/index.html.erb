@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Solutions</h1>
+<!-- responsive functionlaity added to table-->
+<div class="table-responsive">          
+  <table class="table table-striped">
 
-<table>
   <thead>
     <tr>
       <th>Name</th>
@@ -22,13 +24,17 @@
         <td><%= solution.image_url %></td>
         <td><%= solution.serviceprovider.title %></td>
         <td><%= solution.repair.job_number %></td>
+        
+        <%if current_user && current_user.admin %>
         <td><%= link_to 'Show', solution %></td>
         <td><%= link_to 'Edit', edit_solution_path(solution) %></td>
         <td><%= link_to 'Destroy', solution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

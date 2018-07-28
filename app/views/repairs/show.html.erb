@@ -35,11 +35,13 @@
   <strong>Repairer:</strong>
   <%= @repair.repairer %>
 </p>
-<!-- entered by jkm for sp to show in show page -->
+<!-- below colum entered jkm for sp to show in show page -->
 <p>
    <strong>Serviceprovider:</strong>
 <%= @repair.serviceprovider&.title %>
 </p>
+
+
 <%if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_repair_path(@repair) %> |
 <%end%>
