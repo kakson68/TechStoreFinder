@@ -4,7 +4,9 @@ class RepairsController < ApplicationController
 
   # GET /repairs
   # GET /repairs.json
+  
   def index
+   
     @repairs = Repair.all
   end
 
@@ -86,6 +88,7 @@ class RepairsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def repair_params
-      params.require(:repair).permit(:job_number, :fault, :descrition, :repair_type, :booking_date, :location, :repairer,:serviceprovider_id)
+      params.require(:repair).permit(:job_number, :fault, :descrition, :repair_type, :booking_date, :location, :repairer,:serviceprovider_id )
+     
     end
 end

@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+  
+  <!-- Repair form styled with bootstrap-scss-->
 
   <!--div class="field">
     <%= form.label :job_number %>
@@ -52,15 +54,16 @@
   
   
   
-  <%# add jkm %>
+  <%# This functionality will enable user to select serviceprovider%>
+  <%# integrating another class in the repair form%>
   
    <div class="form-group">
     <%= form.label :serviceprovider %>
-    <%#= form.collection_select :serviceprovider_id, @serviceproviders, :id, :title %>
+    
     <%= form.select :serviceprovider_id, @serviceproviders.pluck(:title, :id) %>
   </div> 
   
- <%#= Issue not resolved pls ask Benit. I want user to be able to enter device details when completing online repair form %>
+ <%#= Issue not resolved pls ask Benit. I want user to be able to enter device details when completing online repair form before submiting the form %>
   <h4> <%= link_to 'Enter Device Details', new_device_path %> </h4>
 
 

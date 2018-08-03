@@ -1,11 +1,8 @@
 
 <p id="notice"><%= notice %></p>
-<!--enable dynamic page title-->
-<%= render 'layouts/shared/page_title', title: "showing all repairs" %>
+<!--h1>Repairs</h1 relaced with page title partial-->
+<%= render 'layouts/shared/page_title', title: "Search Result" %>
 
-
-<!--table  below class[serviceprovider] was added jkm-->
-<!-- responsive functionlaity added to table-->
 <div class="table-responsive">
   <table class="table table-striped">
   <thead>
@@ -34,10 +31,11 @@
         <td><%= repair.location %></td>
         <td><%= repair.repairer %></td>
         
-        <%# Serviceprovider added working now %>
-       
+        <%# add by jkm/ working now%>
+       <!--  <td><%#= repair.serviceproviders.map  { |serviceproviders| serviceproviders.title } %></td> -->
         <td><%= repair.serviceprovider&.title %></td>
         
+       
         
         <td><%= link_to 'Show', repair %></td>
         
