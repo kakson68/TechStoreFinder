@@ -4,15 +4,39 @@ class Repair < ApplicationRecord
     belongs_to :serviceprovider
     belongs_to :user
     
-   #added now 
-def self.search(term)
-	if term
-		where('name LIKE ?', "%#{term}%")
+     #implementing the Search method in the  Model
+    #def self.search(search)
+      #  if search
+       #  where('location LIKE ? OR descrition LIKE ? OR fault LIKE ? OR job_number LIKE?', "%#{search}%", "%#{search}%","%#{search}%", "%#{search}%")
+        #else
+        
+       # all
+      #  end
+   # end
+   
+   
+   
+def self.search(search)
+    if search
+	where('Fault LIKE ? OR descrition LIKE ? OR location LIKE ? OR job_number LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%").order('id DESC')
 	else
-	all
-	end
+	order('id DESC')
+    end
 end
+
+
     
-  #end here  
-    
-end
+end  #end class Repair do not delete
+
+
+
+
+
+
+
+
+
+
+
+
+

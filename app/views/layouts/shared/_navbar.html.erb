@@ -51,24 +51,21 @@
        
        
         <!--Search Form Start here -->
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-           <!-- original start here use this if below failed--->
-        <!--1 <input type="text" class="form-control" placeholder="Search">  -->
-       <!--2 </div>  -->
-        <!--3 <button type="submit" class="btn btn-default">Submit -->
-         <!--4 </button> -->
-          <!-- original ends here do not delet 4 above---->
+    <form class="navbar-form navbar-left">
+      <div class="form-group">
           
-           <%= form_tag("/search", :method => "post") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'form-control' %>
-            
-           </div>
-            <%= submit_tag "Submit", class: 'btn btn-default' %>
-           
+        <div class="input-group">
+          <%= form_tag(repairs_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder:"Search", class: 'form-control' %>
+            <span class="input-group-btn">
+              <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
+            </span>
           <% end %>
+        </div>
+
+      </div>
           
-      </form>
+    </form>
       <!--Search Form Ends here-->
       
       

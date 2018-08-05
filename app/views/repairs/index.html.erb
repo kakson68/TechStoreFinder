@@ -4,6 +4,13 @@
 <%= render 'layouts/shared/page_title', title: "showing all repairs" %>
 
 
+<!-- Repair search notice-->
+<% if @repairs.length == 0  %>
+<br />
+<h3> No Repair Found to Match your Search </h3>
+<% end %>
+
+
 <!--table  below class[serviceprovider] was added jkm-->
 <!-- responsive functionlaity added to table-->
 <div class="table-responsive">
